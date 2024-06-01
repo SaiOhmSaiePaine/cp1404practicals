@@ -1,7 +1,7 @@
 def main():
     MIN_LENGTH = 7
     password = get_valid_password(MIN_LENGTH)
-    print_asterisks(password)
+    generate_asterisks(password)
 
 
 def get_valid_password(min_length):
@@ -12,7 +12,7 @@ def get_valid_password(min_length):
     return password
 
 
-def print_asterisks(password):
+def generate_asterisks(password):
     print('*' * len(password))
 
 

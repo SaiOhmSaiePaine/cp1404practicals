@@ -8,11 +8,15 @@ def convert_to_celsius(fahrenheit):
     return celsius
 
 
-def main():
+def show_menu():
     MENU = """C - Convert Celsius to Fahrenheit
-    F - Convert Fahrenheit to Celsius
-    Q - Quit"""
+F - Convert Fahrenheit to Celsius
+Q - Quit"""
     print(MENU)
+
+
+def main():
+    show_menu()
     choice = input(">>> ").upper()
 
     while choice != "Q":
@@ -28,7 +32,7 @@ def main():
 
         else:
             print("Invalid option")
-        print(MENU)
+
         choice = input(">>> ").upper()
     print("Thank you.")
 
