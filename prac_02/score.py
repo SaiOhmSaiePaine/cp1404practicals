@@ -1,20 +1,28 @@
+import random
+
+
 def main():
     score = float(input("Enter score: "))
-    check_score(score)
+    result = check_score(score)
+    print(f"Your result is {result}.")
+
+    random_score = random.randint(1, 100)
+    random_result = check_score(random_score)
+    print(f"The random result is {random_result}.")
 
 
 def check_score(score):
     if score < 0:
-        print("Invalid score")
+        return "Invalid score"
     else:
         if score > 100:
-            print("Invalid score")
+            return "Invalid score"
         elif score >= 90:
-            print("Excellent")
+            return "Excellent"
         elif score >= 50:
-            print("Passable")
+            return "Passable"
         else:
-            print("Bad")
+            return "Bad"
 
 
 main()
