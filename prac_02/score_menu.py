@@ -1,13 +1,15 @@
 def main():
-    small_num = 0
-    high_num = 100
-    score = get_valid_score(small_num, high_num)
+    SMALL_NUM = 0
+    HIGH_NUM = 100
+    score = get_valid_score(SMALL_NUM, HIGH_NUM)
 
     show_menu()
     choice = input("Enter choice: ").upper()
+
     while choice != "Q":
         if choice == "P":
-            check_score(score)
+            result = check_score(score)
+            print(f"{score} is {result}. ")
         elif choice == "S":
             show_asterisks(score)
         else:
@@ -38,16 +40,16 @@ def show_asterisks(score):
 
 def check_score(score):
     if score < 0:
-        print(f"Invalid score.")
+        return "Invalid score"
     else:
         if score > 100:
-            print("Invalid score.")
+            return "Invalid score"
         elif score >= 90:
-            print(f"{score} is Excellent.")
+            return "Excellent"
         elif score >= 50:
-            print(f"{score} is Passable.")
+            return "Passable"
         else:
-            print(f"{score} is Bad.")
+            return "Bad"
 
 
 main()
