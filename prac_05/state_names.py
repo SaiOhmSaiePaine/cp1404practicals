@@ -17,13 +17,20 @@ STATE_NAMES = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Te
 print(STATE_NAMES)
 
 # Look Before You Leap (LBYL)
+# state_code = input("Enter short state: ").upper()
+# while state_code != "":
+#     if state_code in STATE_NAMES:
+#         print(state_code, "is", STATE_NAMES[state_code])
+#     else:
+#         print("Invalid short state")
+#     state_code = input("Enter short state: ")
+
+# Easier to Ask Forgiveness than Permission (EAFP)
 state_code = input("Enter short state: ").upper()
 while state_code != "":
-    if state_code in STATE_NAMES:
+    try:
         print(state_code, "is", STATE_NAMES[state_code])
-    else:
+    except KeyError:
         print("Invalid short state")
-    state_code = input("Enter short state: ")
-
-
+    state_code = input("Enter short state: ").upper()
 
